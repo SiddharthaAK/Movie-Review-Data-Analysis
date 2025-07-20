@@ -1,5 +1,6 @@
 # Movie-Review-Data-Analysis
-Created an ETL pipeline to handle a dataset of movie reviews. This project was done as a part of The Fundamentals of Data Engineering course at RV University.
+
+**Movie-Review-Data-Analysis** is an ETL pipeline built in Python to process the classic MovieLens dataset, integrating movie ratings, user demographics, and movie metadata into a clean, unified format. The processed data is loaded into an SQLite database and basic visual analytics on genres and user demographics are provided.. This project was done as a part of The Fundamentals of Data Engineering course at RV University.
 Currently working on building a recommendation system using this data, will be deployed on 1st August.
 
 ---
@@ -31,7 +32,7 @@ Currently working on building a recommendation system using this data, will be d
   - `genre_1` to `genre_23`: Binary flags indicating movie genres (only genres 1 to 19 retained, 20-23 dropped)  
 
 - **u.genre**  
-  Mapping of genre indices to names (e.g. 1: Action, 5: Comedy, 19: Western)  
+  Mapping of genre indices to names (e.g. 1: Action, 5: Comedy, 19: Western)  (Not Used)
 
 ---
 
@@ -76,5 +77,44 @@ Currently working on building a recommendation system using this data, will be d
 1. **Install Dependencies**
 
 `pip install pandas matplotlib sqlite3`
+
+2. **Run the Pipeline**
+
+`python main.py`
+
+This will:
+
+- Read and clean the MovieLens files (`u.data`, `u.user`, `u.item`)  
+- Merge into a comprehensive dataset  
+- Store results in a local SQLite database  
+- Display database summary and samples  
+- Generate and show visualizations on genres and user demographics
+
+---
+
+## Visualizations Provided
+
+- **Genre Distribution**: Number of movies per major genre (e.g., Action, Comedy, Drama)  
+- **Age Distribution**: Histogram of user ages  
+- **Gender Distribution**: Counts of Male vs Female users  
+- **Top Occupations**: Bar chart listing the 10 most common user occupations  
+
+---
+
+## Notes
+
+- Only genre flags 1-19 are retained; 20-23 are discarded due to insufficient data.  
+- The project focuses on data engineering and exploratory analysis; it forms a base for further machine learning or recommendation systems.  
+- SQLite DB file `movies_database.db` can be queried externally for ad hoc analysis.  
+
+---
+
+## License
+
+This project is open source under the MIT License.  
+
+---
+
+_For detailed code execution flow and data handling, review the source scripts: `extract.py`, `transform.py`, `load.py`, and `main.py`._
 
    
