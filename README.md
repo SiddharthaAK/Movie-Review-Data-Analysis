@@ -109,11 +109,6 @@ This will:
 
 ---
 
-## License
-
-This project is open source under the MIT License.  
-
----
 
 _For detailed code execution flow and data handling, review the source scripts: `extract.py`, `transform.py`, `load.py`, and `main.py`._
 
